@@ -13,7 +13,6 @@ pipeline {
                 '''
             }
         }
-<<<<<<< HEAD
 
         stage('Build Application123') {
             steps {
