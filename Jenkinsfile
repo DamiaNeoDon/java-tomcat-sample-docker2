@@ -27,7 +27,7 @@ pipeline {
         }
       
         stage ('Build') {
-=======
+
         stage('Build Application') {
 >>>>>>> c0b317e13f4fbba9fd1bf336a742ce72fe1c6bc9
             steps {
