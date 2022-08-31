@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build Application123') {
             steps {
-                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+                sh 'mvn -f pom.xml clean package'
             }
             post {
                 success {
@@ -26,16 +26,13 @@ pipeline {
                 }
             }
         }
-        stage('Deploy in Staging Environment'){
-            steps{
-                build job: 'Deploy_application_staging_envinronment'
-
+      
         stage ('Build') {
 =======
         stage('Build Application') {
 >>>>>>> c0b317e13f4fbba9fd1bf336a742ce72fe1c6bc9
             steps {
-                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+                sh 'mvn -f /pom.xml clean package'
             }
             post {
                 success {
