@@ -28,6 +28,8 @@ pipeline {
         }
         stage('Create tomcat docker image'){
           steps{
+              sh 'pwd'
+              sh 'ls -a'
               sh 'docker build . -t tomcatsamplewevapp:${env.BUILD_ID}'
               }
         }
