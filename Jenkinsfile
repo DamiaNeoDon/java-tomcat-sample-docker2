@@ -26,7 +26,6 @@ pipeline {
             }
         }
       
-            }
         }
         stage('Create tomcat docker image'){
           steps{
