@@ -24,8 +24,6 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
-  
-        }
 
         }
         stage('Create tomcat docker image'){
