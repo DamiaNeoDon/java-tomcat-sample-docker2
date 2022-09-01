@@ -1,7 +1,7 @@
-FROM tomcat:9.0
+FROM tomcat:9.0.65
 
 ADD **/*.war /usr/local/tomcat/webapps
 
-EXPOSE 7070
+EXPOSE 8080
 
 CMD ["catalina.sh", "run"]
