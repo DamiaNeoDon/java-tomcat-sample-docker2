@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build Application123') {
             steps {
-                sh 'mvn -f pom.xml clean package'
+                sh 'mvn -f /pom.xml clean package'
             }
             post {
                 success {
@@ -26,7 +26,10 @@ pipeline {
                 }
             }
         }
-      
+        stage('Deploy in Staging Environment'){
+            steps{
+                build job: 'Deploy_application_staging_envinronment'
+
         stage ('Build') {
 =======
         stage('Build Application') {
@@ -41,10 +44,6 @@ pipeline {
                 }
             }
         }
-        stage('Create tomcat docker image'){
-          steps{
-              sh 'docker build . -t tomcatsamplewevapp:$env.BUILD_ID'
-              }
-        }
+
     }
 }
