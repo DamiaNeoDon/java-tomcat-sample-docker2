@@ -13,7 +13,6 @@ pipeline {
                 '''
             }
         }
-
         stage('Build Application123') {
             steps {
                 sh 'mvn -f /pom.xml clean package'
@@ -25,8 +24,6 @@ pipeline {
                 }
             }
   
-        }
-
         }
         stage('Create tomcat docker image'){
           steps{
