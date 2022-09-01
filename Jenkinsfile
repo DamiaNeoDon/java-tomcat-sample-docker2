@@ -13,7 +13,6 @@ pipeline {
                 '''
             }
         }
-<<<<<<< HEAD
 
         stage('Build Application123') {
             steps {
@@ -25,15 +24,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
-        }
-        stage('Deploy in Staging Environment'){
-            steps{
-                build job: 'Deploy_application_staging_envinronment'
-
-        stage ('Build') {
-=======
         stage('Build Application') {
->>>>>>> c0b317e13f4fbba9fd1bf336a742ce72fe1c6bc9
             steps {
                 sh 'mvn -f /pom.xml clean package'
             }
@@ -45,5 +36,16 @@ pipeline {
             }
         }
 
+=======
+
+        }
+        stage('Create tomcat docker image'){
+          steps{
+              sh 'pwd'
+              sh 'ls -a'
+              sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
+              }
+        }
+>>>>>>> 15f7655287b9ded67c44009d4e8609ddf1f14372
     }
 }
